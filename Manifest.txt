@@ -1,3 +1,4 @@
+History.txt
 LICENSE.txt
 Manifest.txt
 NOTES.txt

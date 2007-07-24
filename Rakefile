@@ -11,3 +11,8 @@ MyRdocFiles = FileList.new("lib/#{MyFileSystemName}.rb",
                            "lib/#{MyFileSystemName}/*.rb").exclude('**/third-party/**')
 			   
 require 's4t-utils/rakefile-common'
+
+desc "Push new version of project homepage."
+task 'homepage' do
+  `cd homepage;  scp * marick@rubyforge.org:/var/www/gforge-projects/#{MyFileSystemName}/`
+end
