@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>homepage/index.html</string>
+	<string>Rakefile.hoe</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -35,36 +35,6 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>Rakefile</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>3</integer>
-				<key>line</key>
-				<integer>17</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>14</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>3</integer>
-				<key>line</key>
-				<integer>17</integer>
-			</dict>
-		</dict>
 		<key>Rakefile.hoe</key>
 		<dict>
 			<key>caret</key>
@@ -73,20 +43,6 @@
 				<integer>0</integer>
 				<key>line</key>
 				<integer>7</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>homepage/index.html</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>15</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -143,8 +99,6 @@
 		<string>lib/s4t-utils.rb</string>
 		<string>lib/s4t-utils/version.rb</string>
 		<string>Rakefile.hoe</string>
-		<string>Rakefile</string>
-		<string>homepage/index.html</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
