@@ -15,6 +15,7 @@ module S4tUtils
   def user_disputes(fact, &block)
     user_claims(!fact, &block)
   end
+  alias_method :user_denies, :user_disputes
   
   # An unconditional claim that the user is bewildered by something 
   # that should not have happened. Most usually, it's that the code

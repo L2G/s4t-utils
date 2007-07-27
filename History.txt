@@ -1,3 +1,6 @@
+Version 1.0.2
+  * Added user_denies as an alias for user_disputes.
+
 Version 1.0.1
   * Added user_is_bewildered to claims.rb
 
