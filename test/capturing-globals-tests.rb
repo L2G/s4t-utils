@@ -38,5 +38,22 @@ class CapturingGlobalsTests < Test::Unit::TestCase
       assert_equal('steak', ARGV[1])
     }
   end
+  
+  def test_with_stdin
+    with_stdin("line1\nline2") do
+      assert_equal("line1\n", readline)
+      assert_equal("line2", readline)
+    end
+  end
+  
+  def test_with_nested_stdin
+    with_stdin("line1\nline2") do
+      assert_equal("line1\n", readline)
+      with_stdin("intermediate") do
+        assert_equal("intermediate", readline)
+      end
+      assert_equal("line2", readline)
+    end
+  end
 
 end

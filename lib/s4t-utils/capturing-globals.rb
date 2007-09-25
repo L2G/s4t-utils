@@ -89,5 +89,15 @@ module S4tUtils
       ARGV.replace(old_argv)
     end
   end
+  
+  def with_stdin(string)
+    old_stdin = $stdin
+    $stdin = StringIO.new(string)
+    yield
+  ensure
+    $stdin = old_stdin
+  end
+    
+  
 
 end
