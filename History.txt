@@ -1,5 +1,7 @@
-Version 1.0.3
-  * Added with_stdin
+Version 1.0.3  --- in progress
+  * Added with_stdin and capturing_stdout
+  * Added set_test_paths and set_script_lib_path
+  * pi can take symbols as captions.
 
 Version 1.0.2
   * Added user_denies as an alias for user_disputes.

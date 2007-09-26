@@ -21,13 +21,14 @@ module S4tUtils
   #     pi [1, 2, 3], 'input'    # => 'input: [1, 2, 3]
   #
   # The _arg_ is printed using +inspect+. If _leader_ isn't given, 
-  # nothing is printed before _arg_.
+  # nothing is printed before _arg_. _leader_ can be a string or symbol.
   #
   # pi returns its _arg_, which is occasionally useful for sticking
   # debugging into the middle of complicated expressions.
   def pi(arg, leader=nil)
-     leader = (leader == nil) ? '' : leader + ': '
-     prog1(arg) { puts leader + arg.inspect }
+    leader = leader.to_s if leader
+    leader = (leader == nil) ? '' : leader + ': '
+    prog1(arg) { puts leader + arg.inspect }
    end
   
 

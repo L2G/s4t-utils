@@ -17,6 +17,23 @@ module S4tUtils
     end
     new_stderr.string
   end
+  
+  # Run the block, capturing output to $stdout in a string.
+  # That string is the method's return value.
+  #
+  # Note: this assigns to $stdout, which is deprecated in 
+  # favor of $stdout.reopen. However, reopen can't take a 
+  # StringIO as an argument.
+  def capturing_stdout
+    new_stdout = StringIO.new
+    $stdout = new_stdout
+    begin
+      yield
+    ensure
+      $stdout = STDOUT
+    end
+    new_stdout.string
+  end
 
   # Run the block, replacing the values of environment variables
   # with the values given in the hash _settings_. The environment
@@ -44,7 +61,7 @@ module S4tUtils
       ENV['HOME'] = '.'
       yield
     ensure
-      ENV['HOME'] = @old_home
+      ENV['HOME'] = old_home
     end
   end
 

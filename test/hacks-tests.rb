@@ -38,5 +38,35 @@ class ClaimsTests < Test::Unit::TestCase
     forwarder.values_at
     assert_equal(["one", "two", "three"], forwarder.values_at(3))
   end
+  
+  def test_pi_prints_to_standard_output_using_inspect
+    result = capturing_stdout do
+      pi [1, 2, 3], "caption"
+    end
+    assert_equal("caption: [1, 2, 3]\n", result)
+  end
+
+  def test_pi_does_not_need_a_caption
+    result = capturing_stdout do
+      pi [1, 2, 3]
+    end
+    assert_equal("[1, 2, 3]\n", result)
+  end
+  
+  def test_pi_can_take_a_symbol_as_a_caption
+    result = capturing_stdout do
+      pi [1, 2, 3], :caption
+    end
+    assert_equal("caption: [1, 2, 3]\n", result)    
+  end
+    
+  def test_pi_returns_a_useful_value
+    result = capturing_stdout do
+      val = pi([1, 2, 3], 'val')
+      assert_equal([1, 2, 3], val)
+    end
+    assert_equal("val: [1, 2, 3]\n", result)
+  end
+    
 
 end
