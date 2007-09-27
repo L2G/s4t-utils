@@ -9,6 +9,7 @@ require 's4t-utils/hacks'
 require 's4t-utils/command-line'
 require 's4t-utils/test-util'
 require 's4t-utils/os'
+require 's4t-utils/ruby-extensions'
 
 require 'pp'
 

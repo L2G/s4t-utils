@@ -16,6 +16,7 @@ data/make-s4t-project/setup.rb
 data/make-s4t-project/sub-lib-skeleton
 data/make-s4t-project/test-skeleton
 data/make-s4t-project/version-skeleton
+homepage/index.html
 lib/s4t-utils.rb
 lib/s4t-utils/capturing-globals.rb
 lib/s4t-utils/claims.rb
@@ -28,6 +29,7 @@ lib/s4t-utils/more-assertions.rb
 lib/s4t-utils/os.rb
 lib/s4t-utils/rake-task-helpers.rb
 lib/s4t-utils/rakefile-common.rb
+lib/s4t-utils/ruby-extensions.rb
 lib/s4t-utils/svn-file-movement.rb
 lib/s4t-utils/test-util.rb
 lib/s4t-utils/version.rb
