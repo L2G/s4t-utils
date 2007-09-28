@@ -20,3 +20,14 @@ Hoe.new("s4t-utils", S4tUtils::Version) do |p|
   p.url = "http://s4t-utils.rubyforge.org"
   p.remote_rdoc_dir = 'rdoc'
 end
+
+desc "Tag release with current version."
+task 'tag_release' do
+  root = "svn+ssh://marick@rubyforge.org/var/svn/s4t-utils"
+  from = "#{root}/trunk"
+  to = "#{root}/tags/rel-#{S4tUtils::Version}"
+  message = "Release #{S4tUtils::Version}"
+  exec = "svn copy -m '#{message}' #{from} #{to}"
+  puts exec
+  system(exec)
+end
