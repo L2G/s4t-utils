@@ -1,3 +1,5 @@
+Version 1.0.4 -- in progress
+
 Version 1.0.3
   * Added with_stdin and capturing_stdout
   * Added set_test_paths and set_script_lib_path
