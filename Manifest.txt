@@ -24,6 +24,7 @@ lib/s4t-utils/command-line.rb
 lib/s4t-utils/error-handling.rb
 lib/s4t-utils/friendly-format.rb
 lib/s4t-utils/hacks.rb
+lib/s4t-utils/hoelike.rb
 lib/s4t-utils/load-path-auto-adjuster.rb
 lib/s4t-utils/more-assertions.rb
 lib/s4t-utils/os.rb
