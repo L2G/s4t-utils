@@ -4,7 +4,6 @@ Manifest.txt
 NOTES.txt
 README.txt
 Rakefile
-Rakefile.hoe
 bin/make-s4t-project.rb
 bin/s4t-script-location-file
 data/make-s4t-project/README-skeleton
