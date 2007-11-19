@@ -1,6 +1,7 @@
 # This file should be copied into a test ending in 'tests.rb' so that
 # the Rakefile knows it's a test.
 
+require "set-standalone-test-paths.rb"
 require 'test/unit'
 require 's4t-utils'
 include S4tUtils
