@@ -1,5 +1,5 @@
 Version 1.0.4 -- in progress
-  * TODO: Should really merge the two Rakefiles.
+  * Merged two Rakefiles into one concise one.
   * Added "hoelike" - extensions to hoe tasks.
 
 Version 1.0.3
