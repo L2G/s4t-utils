@@ -1,4 +1,4 @@
-#! /opt/local/bin/ruby
+#!/usr/bin/env ruby
 
 require 'pathname'
 $:.unshift((Pathname.new(__FILE__).parent.parent + 'lib').to_s)
@@ -11,9 +11,6 @@ require "fileutils"
 include FileUtils
 require 'rbconfig'
 include Config
-
-user_choices = {}
-
 
 def copy_silently(from, to, replacements)
   copy(from, to)
@@ -45,14 +42,14 @@ with_pleasant_exceptions do
   # source tree.
   src_s4t_root = Pathname.new(__FILE__).parent.parent
   src_s4t_lib = src_s4t_root + 'lib'
-  src_s4t_templates = src_s4t_root + 'data' + 'make-s4t-project'
+  src_s4t_templates = src_s4t_root + 'data' + 's4t-utils' + 'make-s4t-project'
 
   # Otherwise, assume installed with setup.rb
   unless File.directory?(src_s4t_lib) and File.directory?(src_s4t_templates)
     orig_src_s4t_lib = src_s4t_lib
     src_s4t_lib = Pathname.new(CONFIG['sitelibdir'])
     orig_src_s4t_templates = src_s4t_templates
-    src_s4t_templates = Pathname.new(CONFIG['datadir']) + 'make-s4t-project'
+    src_s4t_templates = Pathname.new(CONFIG['datadir']) + 's4t-utils' + 'make-s4t-project'
 
     user_claims(File.directory?(src_s4t_lib)) {
       "Could not find the folder of s4t-util library files to install.\nThese did not work:
