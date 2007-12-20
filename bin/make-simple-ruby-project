@@ -12,7 +12,7 @@ def templates_below(root)
   Pathname.new(root) + 'data' + 's4t-utils' + 'make-simple-ruby-project'
 end
 
-without_pleasant_exceptions do
+with_pleasant_exceptions do
   # Orient ourselves. First, assume running out of the s4t-utils
   # source tree.
   templates = templates_below(Pathname.new(__FILE__).parent.parent)
