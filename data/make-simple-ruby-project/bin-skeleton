@@ -1,0 +1,10 @@
+#!/usr/lib/env ruby
+# -*- Mode: Ruby -*- 
+# The above line tells Emacs this is a Ruby file, even if it doesn't
+# have an extension.
+
+# The following adjusts the load path so that the development version
+# of this command uses the development version of the library.
+
+require 's4t-utils'
+S4tUtils.set_script_lib_path(__FILE__)

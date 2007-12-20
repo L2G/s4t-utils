@@ -1,0 +1,13 @@
+# This file should be copied into a test ending in 'tests.rb' so that
+# the Rakefile knows it's a test.
+
+require 'test/unit'
+require 's4t-utils'
+S4tUtils.set_test_paths(__FILE__)
+# The above makes sure that you're testing the development version,
+# not the installed version.
+
+class TestName < Test::Unit::TestCase
+  def test_something
+  end
+end
