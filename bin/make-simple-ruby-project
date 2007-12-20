@@ -6,41 +6,33 @@ include S4tUtils
 
 require "fileutils"
 include FileUtils
+require 'rbconfig/datadir'
 
-with_pleasant_exceptions do
+def templates_below(root)
+  Pathname.new(root) + 'data' + 's4t-utils' + 'make-simple-ruby-project'
+end
 
+without_pleasant_exceptions do
   # Orient ourselves. First, assume running out of the s4t-utils
   # source tree.
-  src_root = Pathname.new(__FILE__).parent.parent
-  src_templates = src_root + 'data' + +'s4t-utils' + 'make-simple-ruby-project'
+  templates = templates_below(Pathname.new(__FILE__).parent.parent)
 
-  # Otherwise, assume installed with setup.rb
-  unless File.directory?(src_templates)
-    src_templates = File.join(Gem.datadir('s4t-utils'),
-                              's4t-utils',
-                              'make-simple-ruby-project')
-    user_claims(File.directory?(src_templates)) {
-      "Could not find the folder of s4t-util template files to install.\nExpecting: #{src_templates}"
-    }
+  # Otherwise, assume running from setup.rb or gem installation.
+  unless File.directory?(templates)
+    templates = templates_below(Config.datadir('s4t-utils'))
   end
 
-  ## Ask some questions about what the user wants.
-
-  answer = ask(".",
-               "In what folder do you want the project?",
-               "(By default, it's the current one.)")
-  where = Pathname.new(File.expand_path(answer))
-  user_claims(File.directory?(where)) {
-    "#{where} is not a directory."
+  user_claims(File.directory?(templates)) {
+    "Could not find the folder of s4t-util template files to install.\nExpecting: #{templates}"
   }
 
-  file_name = ask('default-project',
-                  "What should the project be named?")
-  dest_project_root = (where + file_name)
-  user_disputes(File.exist?(dest_project_root)) {
+
+  dest_project_root = ARGV[0]
+  user_claims(dest_project_root) { "Usage: #{$0} project-root" }
+  dest_project_root = Pathname(dest_project_root)
+  user_disputes(File.exist?(dest_project_root)) { 
     "#{dest_project_root} already exists."
   }
-
 
   ## OK, here we go!
 
@@ -49,9 +41,9 @@ with_pleasant_exceptions do
   mkdir_p(dest_project_root + 'test')
   mkdir_p(dest_project_root + 'templates')
 
-  cp(src_s4t_templates + 'setup.rb', dest_project_root + 'setup.rb')
-  cp(src_s4t_templates + 'bin-skeleton', dest_project_root + 'templates')
-  cp(src_s4t_templates + 'test-skeleton', dest_project_root + 'templates')
+  cp(templates + 'setup.rb', dest_project_root + 'setup.rb')
+  cp(templates + 'bin-skeleton', dest_project_root + 'templates')
+  cp(templates + 'test-skeleton', dest_project_root + 'templates')
 
   puts "Now would be a good time to put the project under version control."
 end
