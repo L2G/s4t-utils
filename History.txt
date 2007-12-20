@@ -1,4 +1,8 @@
-Version 1.0.4 -- in progress
+Version 1.0.5
+  * Added make-simple-ruby-project command.
+  * Make commands in bin compatible with rubygems --wrapper.
+
+Version 1.0.4
   * Merged two Rakefiles into one concise one.
   * Added "hoelike" - extensions to hoe tasks.
 
