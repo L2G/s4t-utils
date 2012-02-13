@@ -36,7 +36,8 @@ end
 # * export: export entire project to pristine temp directory.
 # * release_everything: Release code, rdoc, and website to rubyforge.
 class HoeLike
-  
+  include Rake::DSL
+
   def initialize(keys)
     @keys = keys
     project = pull(:project)
