@@ -10,8 +10,9 @@ require 's4t-utils/version'
 PROJECT='s4t-utils'
 THIS_RELEASE=S4tUtils::Version
 
-Hoe.new(PROJECT, THIS_RELEASE) do |p|
+Hoe.spec(PROJECT) do |p|
   p.rubyforge_name = PROJECT
+  p.version = THIS_RELEASE
   p.changes = "See History.txt"
   p.author = "Brian Marick"
   p.description = "Unified interface to command-line, environment, and configuration files."
@@ -19,7 +20,7 @@ Hoe.new(PROJECT, THIS_RELEASE) do |p|
   p.email = "marick@exampler.com"
   p.extra_deps = []
   p.test_globs = "test/**/*tests.rb"
-  p.rdoc_pattern = %r{README.txt|History.txt|lib/s4t-utils.rb|lib/s4t-utils/.+\.rb}
+  #p.rdoc_pattern = %r{README.txt|History.txt|lib/s4t-utils.rb|lib/s4t-utils/.+\.rb}
   p.url = "http://s4t-utils.rubyforge.org"
   p.remote_rdoc_dir = 'rdoc'
 end
