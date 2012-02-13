@@ -29,7 +29,7 @@ module S4tUtils
     leader = leader.to_s if leader
     leader = (leader == nil) ? '' : leader + ': '
     prog1(arg) { puts leader + arg.inspect }
-   end
+  end
   
 
 
