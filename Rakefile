@@ -10,6 +10,7 @@ require 's4t-utils/version'
 PROJECT='s4t-utils'
 THIS_RELEASE=S4tUtils::Version
 
+Hoe.plugin :bundler
 Hoe.spec(PROJECT) do |p|
   p.rubyforge_name = PROJECT
   p.version = THIS_RELEASE
@@ -19,6 +20,7 @@ Hoe.spec(PROJECT) do |p|
   p.description = "Unified interface to command-line, environment, and configuration files."
   p.summary = p.description
   p.extra_deps = []
+  p.extra_dev_deps << ['hoe-bundler', '~>1.1']
   p.test_globs = ['test/**/*tests.rb']
   #p.rdoc_pattern = %r{README.txt|History.txt|lib/s4t-utils.rb|lib/s4t-utils/.+\.rb}
   p.url = "http://s4t-utils.rubyforge.org"
