@@ -19,7 +19,7 @@ Hoe.spec(PROJECT) do |p|
   p.description = "Unified interface to command-line, environment, and configuration files."
   p.summary = p.description
   p.extra_deps = []
-  p.test_globs = "test/**/*tests.rb"
+  p.test_globs = ['test/**/*tests.rb']
   #p.rdoc_pattern = %r{README.txt|History.txt|lib/s4t-utils.rb|lib/s4t-utils/.+\.rb}
   p.url = "http://s4t-utils.rubyforge.org"
   p.remote_rdoc_dir = 'rdoc'
