@@ -14,10 +14,10 @@ Hoe.spec(PROJECT) do |p|
   p.rubyforge_name = PROJECT
   p.version = THIS_RELEASE
   p.changes = "See History.txt"
-  p.author = "Brian Marick"
+  p.developer("Brian Marick", "marick@exampler.com")
+  p.developer("Larry Gilbert", "larry@l2g.to")
   p.description = "Unified interface to command-line, environment, and configuration files."
   p.summary = p.description
-  p.email = "marick@exampler.com"
   p.extra_deps = []
   p.test_globs = "test/**/*tests.rb"
   #p.rdoc_pattern = %r{README.txt|History.txt|lib/s4t-utils.rb|lib/s4t-utils/.+\.rb}
