@@ -10,7 +10,7 @@ require 's4t-utils/version'
 PROJECT='s4t-utils'
 THIS_RELEASE=S4tUtils::Version
 
-Hoe.plugin :bundler
+Hoe.plugin :bundler, :gemspec
 Hoe.spec(PROJECT) do |p|
   p.rubyforge_name = PROJECT
   p.version = THIS_RELEASE

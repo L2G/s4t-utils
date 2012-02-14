@@ -4,9 +4,12 @@
 
 source :gemcutter
 
+gem "rdoc", "~>3.10"
 
-gem "hoe-bundler", "~>1.1", :group => [:development, :test]
-gem "rdoc", "~>3.10", :group => [:development, :test]
-gem "hoe", "~>2.13", :group => [:development, :test]
+group :development, :test do
+  gem "hoe", "~>2.13"
+  gem "hoe-bundler", "~>1.1"
+  gem "hoe-gemspec2", "~>1.0"
+end
 
 # vim: syntax=ruby
