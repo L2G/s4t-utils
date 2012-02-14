@@ -1,4 +1,12 @@
-Version 1.0.4 -- in progress
+Version 1.0.5 (in development)
+  * IMPORTANT: s4t-utils is nearly at the end of its useful life. There
+    are no plans for further development except to address
+    compatibility problems in Ruby >= 1.9.2. If you are still
+    using s4t-utils, it is time to migrate.
+  * assert_true and assert_false have been reworked to fix
+    warnings and errors in 1.9.x.
+
+Version 1.0.4
   * Merged two Rakefiles into one concise one.
   * Added "hoelike" - extensions to hoe tasks.
 
