@@ -5,6 +5,9 @@ Version 1.0.5 (in development)
     using s4t-utils, it is time to migrate.
   * assert_true and assert_false have been reworked to fix
     warnings and errors in 1.9.x.
+  * set_script_lib_path finds its place by looking for directories 'lib'
+    and 'test' in the same place. (Formerly it looked for 'lib', 'test',
+    and 'setup.rb', and didn't care whether or not they were directories.)
 
 Version 1.0.4
   * Merged two Rakefiles into one concise one.

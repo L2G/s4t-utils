@@ -47,10 +47,9 @@ module S4tUtils
   def set_script_lib_path(given) 
     path = File.expand_path(given)
     p = lambda { | x | File.join(File.dirname(path), '..', x) }
-    l = p['lib']
-    t = p['test']
-    s = p['setup.rb']
-    $:.unshift(l) if File.exists?(l) && File.exists?(t) && File.exists?(s)
+    libdir  = p['lib']
+    testdir = p['test']
+    $:.unshift(libdir) if File.directory?(libdir) && File.directory?(testdir)
   end
   module_function :set_script_lib_path
 
