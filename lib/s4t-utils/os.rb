@@ -15,7 +15,7 @@ module S4tUtils
     end
     begin
       File.expand_path("~")
-    rescue StandardError => ex
+    rescue StandardError
       if File::ALT_SEPARATOR
         "C:/"
       else
