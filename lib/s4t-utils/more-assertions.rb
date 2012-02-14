@@ -3,16 +3,16 @@ module Test
 
     # Some additional Test::Unit assertions.
     module Assertions
-      # Same as +assert+. I just like it better.
-      def assert_true(boolean, message = nil)
-        assert(boolean, message)
+      # Apparently this wasn't in Test::Unit before...
+      unless self.method_defined? :assert_true
+        def assert_true(boolean, message = nil)
+          assert(boolean, message.nil? ? '' : message)
+        end
       end
 
       # Assert that the _boolean_ is false.
       def assert_false(boolean, message = nil)
-        _wrap_assertion do
-          assert_block(build_message(message, "<?> should be false or nil.", boolean)) { !boolean }
-        end
+        assert(!boolean, build_message(message, "<?> should be false or nil.", boolean))
       end
 
       # Like +assert_raise+, but the raised exception must contain a
