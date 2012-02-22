@@ -1,7 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    hoe (2.13.1)
+    hoe (2.14.0)
       rake (~> 0.8)
     hoe-bundler (1.1.0)
       hoe (>= 2.2.0)
@@ -16,7 +16,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  hoe (~> 2.13)
+  hoe (~> 2.14)
   hoe-bundler (~> 1.1)
   hoe-gemspec2 (~> 1.0)
   rdoc (~> 3.10)
